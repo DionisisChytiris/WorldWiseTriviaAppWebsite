@@ -1,0 +1,16 @@
+export const mockTabletEs = [
+     {  phone: "/tablet/es/img1.png"},
+     {  phone: "/tablet/es/img2.png"},
+     {  phone: "/tablet/es/img3.png"},
+     {  phone: "/tablet/es/img4.png"},
+     {  phone: "/tablet/es/img5.png"},
+     {  phone: "/tablet/es/img6.png"},
+     {  phone: "/tablet/es/img7.png"},
+     {  phone: "/tablet/es/img8.png"},
+     {  phone: "/tablet/es/img9.png"},
+     {  phone: "/tablet/es/img10.png"},
+     {  phone: "/tablet/es/img11.png"},
+     {  phone: "/tablet/es/img12.png"},
+     {  phone: "/tablet/es/img13.png"},
+     {  phone: "/tablet/es/img14.png"},
+];
