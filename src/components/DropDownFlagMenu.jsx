@@ -27,13 +27,13 @@ function DropDownFlagMenu({ changeLanguage }) {
       {isOpen && (
         <div className="absolute right-0 mt-2 w-20 bg-white dark:bg-gray-800 rounded shadow-lg p-2 flex flex-col items-center  gap-2 z-50">
           <button onClick={() => { changeLanguage("en"); setIsOpen(false); }}>
-            <img src="/i18nFlags/uk.png" alt="English" className="w-6 h-4" />
+            <img src="/i18nFlags/uk.png" alt="English" className="w-6 h-4 hover:border-2" />
           </button>
           <button onClick={() => { changeLanguage("es"); setIsOpen(false); }}>
-            <img src="/i18nFlags/spain.png" alt="Spanish" className="w-6 h-4" />
+            <img src="/i18nFlags/spain.png" alt="Spanish" className="w-6 h-4 hover:border-2" />
           </button>
           <button onClick={() => { changeLanguage("gr"); setIsOpen(false); }}>
-            <img src="/i18nFlags/greece.png" alt="Greek" className="w-6 h-4" />
+            <img src="/i18nFlags/greece.png" alt="Greek" className="w-6 h-4 hover:border-2" />
           </button>
         </div>
       )}

@@ -17,7 +17,7 @@ function PreviewSection() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-12">
             <div className="flex-1">
-              <h2 className="text-3xl  lg:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-14 md:mb-12 lg:mb-24 px-4 text-center">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-14 md:mb-12 lg:mb-24 px-4 text-center">
                 {t("journeyTitle")}
               </h2>
               <div className="space-y-6">
@@ -41,7 +41,6 @@ function PreviewSection() {
             <div className="flex-1">
               <img
                 src="/worldimg.png"
-                // src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1000&q=80"
                 alt="natural monuments"
                 className="rounded-lg shadow-xl"
               />
@@ -58,8 +57,8 @@ function Feature({ icon, title, description }) {
     <div className="flex items-start gap-4">
       <div className="p-2 bg-white rounded-lg shadow-md">{icon}</div>
       <div>
-        <h3 className="font-semibold text-gray-900">{title}</h3>
-        <p className="text-gray-600">{description}</p>
+        <h3 className="font-semibold text-gray-900 dark:text-gray-200">{title}</h3>
+        <p className="text-gray-600 dark:text-gray-400">{description}</p>
       </div>
     </div>
   );
