@@ -61,7 +61,7 @@ function MultipleCategories() {
         </div>
         {/* Medium-Small screens */}
         <div className="block md:hidden">
-          <div className="w-3/4 ml-[2%] mb-3" data-aos="fade-right">
+          <div className="w-3/4 ml-[5%] mb-3" data-aos="fade-right">
             <FeatureCardLeft
               icon={
                 <Flag className="w-6 h-6 text-blue-600 dark:text-blue-300" />
@@ -70,7 +70,7 @@ function MultipleCategories() {
                title={t("flags")}
             />
           </div>
-          <div className="w-3/4 ml-[23%] mb-3" data-aos="fade-left">
+          <div className="w-3/4 ml-[19%] mb-3" data-aos="fade-left">
             <FeatureCardRight
               icon={
                 <Building className="w-6 h-6 text-blue-600 dark:text-blue-300" />
@@ -79,7 +79,7 @@ function MultipleCategories() {
               title={t("capitals")}
             />
           </div>
-          <div className="w-3/4 ml-[2%] mb-3" data-aos="fade-right">
+          <div className="w-3/4 ml-[5%] mb-3" data-aos="fade-right">
             <FeatureCardLeft
               icon={
                 <Landmark className="w-6 h-6 text-blue-600 dark:text-blue-300" />
@@ -88,7 +88,7 @@ function MultipleCategories() {
               title={t("worldMnt")}
             />
           </div>
-          <div className="w-3/4 ml-[23%]" data-aos="fade-left">
+          <div className="w-3/4 ml-[19%]" data-aos="fade-left">
             <FeatureCardRight
               icon={
                 <Mountain className="w-6 h-6 text-blue-600 dark:text-blue-300" />
