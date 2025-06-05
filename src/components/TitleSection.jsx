@@ -20,7 +20,7 @@ export default function TitleSection() {
         <h1 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-bold text-customBlue dark:text-white mb-4 sm:mb-8 lg:mb-20">
           {t("title3")}
         </h1>
-        <p className="px-10 text-md sm:text-xl lg:text-2xl text-gray-500 dark:text-gray-200 font-medium pb-14  pt-5 md:pt-10 max-w-3xl mx-auto"  id='download-buttons'>
+        <p className="px-10 text-lg sm:text-xl lg:text-2xl text-gray-500 dark:text-gray-200 font-medium pb-14  pt-5 md:pt-10 max-w-3xl mx-auto"  id='download-buttons'>
           {t("subtitle1")}       
         </p>
 
