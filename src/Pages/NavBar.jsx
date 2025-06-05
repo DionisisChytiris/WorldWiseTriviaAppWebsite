@@ -56,7 +56,7 @@ function Navbar({ isInSection, onClick, darkMode }) {
             {/* Hamburger Button */}
             <button
               onClick={toggleMobileMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-black hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-900 dark:text-gray-200 hover:text-gray-400 dark:hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
             >
               <span className="sr-only">Open main menu</span>
               {isMobileMenuOpen ? (

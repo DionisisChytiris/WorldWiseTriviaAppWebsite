@@ -13,7 +13,7 @@ function HomePage() {
       <TitleSection />
       <MultipleCategories />
       <div className="bg-white dark:bg-gray-900 w-full ">
-        <h2 className="text-3xl lg:text-4xl  font-bold text-center dark:text-white text-gray-900 my-20">
+        <h2 className="text-3xl lg:text-4xl  font-bold text-center dark:text-white text-gray-900 my-20 dark:mb-0 md:dark:my-20">
           Mobile - Tablet/iPad
         </h2>
       </div>
