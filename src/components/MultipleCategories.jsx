@@ -61,7 +61,7 @@ function MultipleCategories() {
         </div>
         {/* Medium-Small screens */}
         <div className="block md:hidden">
-          <div className="w-1/2 ml-[7%] mb-5" data-aos="fade-right">
+          <div className="w-2/3 ml-[2%] mb-3" data-aos="fade-right">
             <FeatureCardLeft
               icon={
                 <Flag className="w-6 h-6 text-blue-600 dark:text-blue-300" />
@@ -70,7 +70,7 @@ function MultipleCategories() {
                title={t("flags")}
             />
           </div>
-          <div className="w-1/2 ml-[43%] mb-5" data-aos="fade-left">
+          <div className="w-2/3 ml-[33%] mb-3" data-aos="fade-left">
             <FeatureCardRight
               icon={
                 <Building className="w-6 h-6 text-blue-600 dark:text-blue-300" />
@@ -79,7 +79,7 @@ function MultipleCategories() {
               title={t("capitals")}
             />
           </div>
-          <div className="w-1/2 ml-[7%] mb-5" data-aos="fade-right">
+          <div className="w-2/3 ml-[2%] mb-3" data-aos="fade-right">
             <FeatureCardLeft
               icon={
                 <Landmark className="w-6 h-6 text-blue-600 dark:text-blue-300" />
@@ -88,7 +88,7 @@ function MultipleCategories() {
               title={t("worldMnt")}
             />
           </div>
-          <div className="w-1/2 ml-[43%]" data-aos="fade-left">
+          <div className="w-2/3 ml-[33%]" data-aos="fade-left">
             <FeatureCardRight
               icon={
                 <Mountain className="w-6 h-6 text-blue-600 dark:text-blue-300" />
@@ -127,16 +127,16 @@ function FeatureCardLeft({ icon, img, title }) {
   return (
     <>
       <div className="relative flex flex-row items-center justify-between bg-gray-300 dark:bg-gray-600 px-2 py-2 rounded-xl">
-        <div className="pr-2">{icon}</div>
-        <h3 className="text-[16px] text-left font-semibold dark:text-white text-gray-900">
-          {title}
-        </h3>
         <img
           src={img}
           alt="QR code"
-          className=" w-1/3 sm:w-1/4"
+          className="w-1/4"
           // className="rounded-lg shadow-2xl shadow-gray-500 dark:shadow-gray-400  w-1/3 sm:w-1/4"
         />
+        <h3 className="text-[16px] text-left font-semibold dark:text-white text-gray-900">
+          {title}
+        </h3>
+        <div className="pr-2">{icon}</div>
       </div>
     </>
   );
@@ -148,7 +148,7 @@ function FeatureCardRight({ icon, img, title }) {
         <img
           src={img}
           alt="QR code"
-          className=" w-1/3 sm:w-1/4 mr-2"
+          className="w-1/4 mr-2"
           // className="rounded-lg shadow-2xl shadow-gray-500 dark:shadow-gray-400 w-1/3 sm:w-1/4 mr-2"
         />
         <h3 className="text-[16px] font-semibold dark:text-white text-gray-900 text-center mr-2">
