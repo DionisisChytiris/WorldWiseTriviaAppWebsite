@@ -23,11 +23,11 @@ function MultipleCategories() {
   const { t } = useTranslation();
   return (
     <div
-      className="py-20 bg-blue-50 dark:bg-gray-900 scroll-mt-20 mt-0"
+      className="py-10 md:py-20 bg-blue-50 dark:bg-gray-900 scroll-mt-20 mt-0"
       id="section2"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl lg:text-4xl  font-bold text-center dark:text-white text-gray-900 mb-20 px-4">
+        <h2 className="text-2xl md:text-4xl  font-bold text-center dark:text-white text-gray-900 mb-10 md:mb-20 px-4">
           {t("multipleCategories")}
         </h2>
         {/* Large Screens */}
@@ -61,7 +61,7 @@ function MultipleCategories() {
         </div>
         {/* Medium-Small screens */}
         <div className="block md:hidden">
-          <div className="w-2/3 ml-[2%] mb-3" data-aos="fade-right">
+          <div className="w-3/4 ml-[2%] mb-3" data-aos="fade-right">
             <FeatureCardLeft
               icon={
                 <Flag className="w-6 h-6 text-blue-600 dark:text-blue-300" />
@@ -70,7 +70,7 @@ function MultipleCategories() {
                title={t("flags")}
             />
           </div>
-          <div className="w-2/3 ml-[33%] mb-3" data-aos="fade-left">
+          <div className="w-3/4 ml-[23%] mb-3" data-aos="fade-left">
             <FeatureCardRight
               icon={
                 <Building className="w-6 h-6 text-blue-600 dark:text-blue-300" />
@@ -79,7 +79,7 @@ function MultipleCategories() {
               title={t("capitals")}
             />
           </div>
-          <div className="w-2/3 ml-[2%] mb-3" data-aos="fade-right">
+          <div className="w-3/4 ml-[2%] mb-3" data-aos="fade-right">
             <FeatureCardLeft
               icon={
                 <Landmark className="w-6 h-6 text-blue-600 dark:text-blue-300" />
@@ -88,7 +88,7 @@ function MultipleCategories() {
               title={t("worldMnt")}
             />
           </div>
-          <div className="w-2/3 ml-[33%]" data-aos="fade-left">
+          <div className="w-3/4 ml-[23%]" data-aos="fade-left">
             <FeatureCardRight
               icon={
                 <Mountain className="w-6 h-6 text-blue-600 dark:text-blue-300" />

@@ -31,7 +31,7 @@ const MockPhones = () => {
   // };
 
   return (
-    <div className="bg-gray-100 dark:bg-gray-900 pb-10 pt-10">
+    <div className="bg-gray-100 dark:bg-gray-900 pt-0 md:pt-10">
       {/* Phone Mockups */}
       <div
         className="relative pt-16 pb-10 flex justify-center items-center overflow-hidden " // Changed overflow-hidden to overflow-x-auto
