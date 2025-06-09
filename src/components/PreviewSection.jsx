@@ -23,18 +23,23 @@ function PreviewSection() {
               <div className="space-y-6">
                 <Feature
                   icon={<Star className="w-6 h-6 text-yellow-500" />}
-                  title="Πολλαπλές Κατηγορίες"
-                  description="From ancient cities to modern regions, test your knowledge across various topics."
+                  title={t("featureTitle1")}
+                  description={t("featureDescription1")}
                 />
                 <Feature
                   icon={<Book className="w-6 h-6 text-green-500" />}
-                  title="Μάθηση και πρόκληση"
-                  description="Learn anywhere, anytime - no internet connection required."
+                  title={t("featureTitle2")}
+                  description={t("featureDescription2")}
                 />
                 <Feature
                   icon={<Brain className="w-6 h-6 text-purple-500" />}
-                  title="Δοκίμασε τις ικανότητές σου "
-                  description="Intuitive design makes learning geography fun and engaging."
+                  title={t("featureTitle3")}
+                  description={t("featureDescription3")}
+                />
+                <Feature
+                  icon={<Map className="w-6 h-6 text-orange-500" />}
+                  title={t("featureTitle4")}
+                  description={t("featureDescription4")}
                 />
               </div>
             </div>
@@ -57,7 +62,9 @@ function Feature({ icon, title, description }) {
     <div className="flex items-start gap-4">
       <div className="p-2 bg-white rounded-lg shadow-md">{icon}</div>
       <div>
-        <h3 className="font-semibold text-gray-900 dark:text-gray-200">{title}</h3>
+        <h3 className="font-semibold text-gray-900 dark:text-gray-200">
+          {title}
+        </h3>
         <p className="text-gray-600 dark:text-gray-400">{description}</p>
       </div>
     </div>
