@@ -81,7 +81,7 @@ function DiverseTypes() {
                <img
                  src={src}
                  alt={`slide-${index}`}
-                 className="relative overflow-visible z-10 carousel-image w-[60%] rounded-lg transition-transform duration-300"
+                 className="relative overflow-visible z-10 carousel-image w-[100%] sm:w-[60%] rounded-lg transition-transform duration-300"
                />
              </div>
            ))}
