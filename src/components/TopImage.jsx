@@ -17,11 +17,12 @@
 
 import React from "react";
 
-const TopImage = () => {
+const TopImage = ({img}) => {
   return (
     <div className="absolute h-[60vh] md:h-[80vh] lg:h-[120vh] w-full overflow-hidden top-0">
       <img
-        src="/mount_fuji.webp"
+        // src="/mount_fuji.webp"
+        src={img}
         alt="Top"
         className="h-full w-full object-cover [mask-image:linear-gradient(to_bottom,rgba(0,0,0,1),rgba(0,0,0,0))] [mask-size:100%_100%] [mask-repeat:no-repeat]"
       />

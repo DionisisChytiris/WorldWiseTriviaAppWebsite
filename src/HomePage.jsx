@@ -6,10 +6,12 @@ import CardSection from "./components/CardSection";
 import PreviewSection from "./components/PreviewSection";
 import MockTablet from "./components/MockTablet";
 import MultipleCategories from "./components/MultipleCategories";
+import TopImage from "./components/TopImage";
 
 function HomePage() {
   return (
     <>
+      <TopImage img='/mount_fuji.webp'/>
       <TitleSection />
       <MultipleCategories />
       <div className="bg-white dark:bg-gray-900 w-full ">

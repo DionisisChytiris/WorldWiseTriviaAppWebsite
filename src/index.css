@@ -5,3 +5,27 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* 
+.carousel-wrapper {
+  width: 80%;
+  margin: 50px auto;
+}
+
+.carousel-slide {
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.carousel-image {
+  width: 60%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Scale up the center image */
+/* .slick-center .carousel-image {
+  transform: scale(1.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+} */ 

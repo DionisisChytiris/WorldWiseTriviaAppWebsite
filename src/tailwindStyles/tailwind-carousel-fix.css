@@ -1,0 +1,40 @@
+/* tailwind-carousel-fix.css */
+/* .slick-slide {
+  overflow: visible !important;
+}
+
+.slick-track {
+  overflow: visible !important;
+} */
+
+
+
+
+.slick-slide {
+  overflow: hidden !important;
+  padding-top: 50px;
+}
+
+.slick-center {
+  overflow: visible !important;
+  height: 500px !important;
+  padding-top: 50px;
+
+}
+/* .slick-list {
+  overflow: visible !important;
+} */
+
+.slick-center .carousel-image {
+  transform: scale(1.3);
+  transform-origin: center;
+  z-index: 10;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s ease;
+}
+
+/* This moves the dots lower within the relative container */
+.slick-dots {
+  bottom: -60px !important;
+  position: absolute;
+}

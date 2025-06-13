@@ -31,7 +31,7 @@ function MultipleCategories() {
           {t("multipleCategories")}
         </h2>
         {/* Large Screens */}
-        <div className="hidden md:grid grid-cols-4 sm:grid-cols-4 gap-2 md:gap-4 lg:gap-6">
+        <div className="hidden md:grid w-full lg:w-5/6 mx-auto grid-cols-4 sm:grid-cols-4 gap-2 md:gap-4 lg:gap-6">
           <FeatureCard
             icon={<Flag className="w-6 h-6 text-blue-600 dark:text-blue-300" />}
             img="/multiplecategories/flags.png"

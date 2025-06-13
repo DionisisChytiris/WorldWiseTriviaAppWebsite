@@ -2,12 +2,17 @@ import React, { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import DropDownFlagMenu from "../components/DropDownFlagMenu";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch} from "react-redux";
+import {toggle} from '../Redux/NavBooleanSlice'
 
 function Navbar({ isInSection, onClick, darkMode }) {
   const { t, i18n } = useTranslation();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrollUp, setScrollUp] = useState(true);
   const lastScrollY = useRef(0);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const isHomePage = useSelector((state)=>state.boolean.value)
+   const dispatch = useDispatch();
+  // const [isHomePage, setIsHomePage] = useState(true)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -102,7 +107,7 @@ function Navbar({ isInSection, onClick, darkMode }) {
               <div
                 className={`${
                   !isInSection ? "bg-white" : "bg-blue-500"
-                } w-12 h-12 rounded-xl flex items-center justify-center`}
+                } w-9 md:w-12 h-9 md:h-12 rounded-xl flex items-center justify-center`}
               >
                 <img
                   src="/logo2.png"
@@ -127,6 +132,10 @@ function Navbar({ isInSection, onClick, darkMode }) {
           {/* Desktop Menu */}
           <div className="hidden sm:block sm:ml-6">
             <div className="flex space-x-4">
+            {isHomePage ? (
+              <>
+
+             
               <a
                 href="#section1"
                 className={`px-3 py-2 rounded-md text-md font-medium text-shadow-md hover:bg-blue-500 hover:text-white hover:dark:bg-blue-500 hover:dark:text-white  ${
@@ -157,6 +166,16 @@ function Navbar({ isInSection, onClick, darkMode }) {
               >
                 {t("contact")}
               </a>
+               </>
+            ): (
+              <>
+                <Link to='/'  onClick={() => dispatch(toggle())}  className={`px-3 py-2 rounded-md text-md font-medium text-shadow-md hover:bg-blue-500 hover:text-white hover:dark:bg-blue-500 hover:dark:text-white  ${
+                  !isInSection
+                    ? "text-gray-900 bg-gray-200 dark:bg-gray-700 dark:text-gray-200"
+                    : "text-blue-500"
+                }`}>Initial</Link>
+              </>
+            )}
               <button
                 onClick={onClick}
                 className="text-1xl p-2 rounded-full bg-gray-200 dark:bg-gray-700  hover:dark:bg-blue-500 hover:bg-blue-500 border-none "

@@ -86,14 +86,14 @@ const MockTablet = () => {
       </div>
 
       {/* Carousel Navigation */}
-      <div className="flex justify-center items-center mt-8 gap-4 pb-20">
+      <div className="flex justify-center items-center -mt-8 md:mt-8 gap-4 pb-20">
         {currentIndex === 0 ? null : (
           <button
             onClick={prevSlide}
             className="p-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition block sm:block md:hidden"
             aria-label="Previous screenshot"
           >
-            <ChevronLeft className="w-6 h-6" />
+            <ChevronLeft className="w-4 md:w-6 h-4 md:h-6" />
           </button>
         )}
         <div className="flex gap-2">
@@ -101,7 +101,7 @@ const MockTablet = () => {
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-2 h-2 rounded-full transition-all ${
+              className={`w-1.5 md:w-2 h-1.5 md:h-2 rounded-full transition-all ${
                 index === currentIndex ? "bg-blue-600 w-4" : "bg-gray-300"
               }`}
               aria-label={`Go to screenshot ${index + 1}`}
@@ -114,7 +114,7 @@ const MockTablet = () => {
             className="p-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition block sm:block md:hidden"
             aria-label="Next screenshot"
           >
-            <ChevronRight className="w-6 h-6" />
+            <ChevronRight className="w-4 md:w-6 h-4 md:h-6" />
           </button>
         )}
       </div>
