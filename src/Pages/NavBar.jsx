@@ -2,16 +2,16 @@ import React, { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import DropDownFlagMenu from "../components/DropDownFlagMenu";
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch} from "react-redux";
-import {toggle} from '../Redux/NavBooleanSlice'
+import { useSelector, useDispatch } from "react-redux";
+import { toggle } from "../Redux/NavBooleanSlice";
 
 function Navbar({ isInSection, onClick, darkMode }) {
   const { t, i18n } = useTranslation();
   const [scrollUp, setScrollUp] = useState(true);
   const lastScrollY = useRef(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const isHomePage = useSelector((state)=>state.boolean.value)
-   const dispatch = useDispatch();
+  const isHomePage = useSelector((state) => state.boolean.value);
+  const dispatch = useDispatch();
   // const [isHomePage, setIsHomePage] = useState(true)
 
   useEffect(() => {
@@ -101,7 +101,7 @@ function Navbar({ isInSection, onClick, darkMode }) {
           </div>
 
           {/* Logo */}
-          <Link to="/">
+          <Link to="/"  onClick={() => dispatch(toggle())}>
             <div className="flex items-center justify-center sm:items-center sm:justify-start ">
               {/* Icon Container */}
               <div
@@ -132,50 +132,54 @@ function Navbar({ isInSection, onClick, darkMode }) {
           {/* Desktop Menu */}
           <div className="hidden sm:block sm:ml-6">
             <div className="flex space-x-4">
-            {isHomePage ? (
-              <>
-
-             
-              <a
-                href="#section1"
-                className={`px-3 py-2 rounded-md text-md font-medium text-shadow-md hover:bg-blue-500 hover:text-white hover:dark:bg-blue-500 hover:dark:text-white  ${
-                  !isInSection
-                    ? "text-gray-900 bg-gray-200 dark:bg-gray-700 dark:text-gray-200"
-                    : "text-blue-500"
-                }`}
-              >
-                {t("home")}
-              </a>
-              <a
-                href="#section2"
-                className={`${
-                  !isInSection
-                    ? "text-gray-900 bg-gray-200 dark:bg-gray-700 dark:text-gray-200"
-                    : "text-blue-500"
-                } text-shadow-md hover:bg-blue-500 hover:text-white px-2 py-2 rounded-md text-md font-medium  hover:dark:bg-blue-500 hover:dark:text-white `}
-              >
-                {t("about")}
-              </a>
-              <a
-                href="#section3"
-                className={`${
-                  !isInSection
-                    ? "text-gray-900 bg-gray-200 dark:bg-gray-700 dark:text-gray-200"
-                    : "text-blue-500 "
-                } text-shadow-md hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md text-md font-medium  hover:dark:bg-blue-500 hover:dark:text-white `}
-              >
-                {t("contact")}
-              </a>
-               </>
-            ): (
-              <>
-                <Link to='/'  onClick={() => dispatch(toggle())}  className={`px-3 py-2 rounded-md text-md font-medium text-shadow-md hover:bg-blue-500 hover:text-white hover:dark:bg-blue-500 hover:dark:text-white  ${
-                  !isInSection
-                    ? "text-gray-900 bg-gray-200 dark:bg-gray-700 dark:text-gray-200"
-                    : "text-blue-500"
-                }`}>Initial</Link>
-              </>
-            )}
+              {isHomePage ? (
+                <>
+                  <a
+                    href="#section1"
+                    className={`px-3 py-2 rounded-md text-md font-medium text-shadow-md hover:bg-blue-500 hover:text-white hover:dark:bg-blue-500 hover:dark:text-white  ${
+                      !isInSection
+                        ? "text-gray-900 bg-gray-200 dark:bg-gray-700 dark:text-gray-200"
+                        : "text-blue-500"
+                    }`}
+                  >
+                    {t("home")}
+                  </a>
+                  <a
+                    href="#section2"
+                    className={`${
+                      !isInSection
+                        ? "text-gray-900 bg-gray-200 dark:bg-gray-700 dark:text-gray-200"
+                        : "text-blue-500"
+                    } text-shadow-md hover:bg-blue-500 hover:text-white px-2 py-2 rounded-md text-md font-medium  hover:dark:bg-blue-500 hover:dark:text-white `}
+                  >
+                    {t("about")}
+                  </a>
+                  <a
+                    href="#section3"
+                    className={`${
+                      !isInSection
+                        ? "text-gray-900 bg-gray-200 dark:bg-gray-700 dark:text-gray-200"
+                        : "text-blue-500 "
+                    } text-shadow-md hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md text-md font-medium  hover:dark:bg-blue-500 hover:dark:text-white `}
+                  >
+                    {t("contact")}
+                  </a>
+                </>
+              ) : (
+                <>
+                  <Link
+                    to="/"
+                    onClick={() => dispatch(toggle())}
+                    className={`px-3 py-2 rounded-md text-md font-medium text-shadow-md hover:bg-blue-500 hover:text-white hover:dark:bg-blue-500 hover:dark:text-white  ${
+                      !isInSection
+                        ? "text-gray-900 bg-gray-200 dark:bg-gray-700 dark:text-gray-200"
+                        : "text-blue-500"
+                    }`}
+                  >
+                    Initial
+                  </Link>
+                </>
+              )}
               <button
                 onClick={onClick}
                 className="text-1xl p-2 rounded-full bg-gray-200 dark:bg-gray-700  hover:dark:bg-blue-500 hover:bg-blue-500 border-none "
@@ -218,44 +222,71 @@ function Navbar({ isInSection, onClick, darkMode }) {
       {isMobileMenuOpen && (
         <div className="sm:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 bg-amber-500 rounded-2xl">
-            <a
-              href="#section1"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="text-white hover:bg-blue-700 block px-3 py-2 rounded-md text-base font-medium"
-            >
-              {t("home")}
-            </a>
-            <a
-              href="#section2"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="text-white hover:bg-blue-700 block px-3 py-2 rounded-md text-base font-medium"
-            >
-              {t("about")}
-            </a>
-            <a
-              href="#section3"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="text-white hover:bg-blue-700 block px-3 py-2 rounded-md text-base font-medium"
-            >
-              {t("contact")}
-            </a>
+            {!isHomePage ? (
+              <>
+                <a
+                  href="#section1"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-white hover:bg-blue-700 block px-3 py-2 rounded-md text-base font-medium"
+                >
+                  {t("home")}
+                </a>
+                <a
+                  href="#section2"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-white hover:bg-blue-700 block px-3 py-2 rounded-md text-base font-medium"
+                >
+                  {t("about")}
+                </a>
+                <a
+                  href="#section3"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-white hover:bg-blue-700 block px-3 py-2 rounded-md text-base font-medium"
+                >
+                  {t("contact")}
+                </a>
+              </>
+            ) : (
+              <>
+                <Link
+                  to="/"
+                  onClick={() => {setIsMobileMenuOpen(false)}}
+                  // onClick={() => {dispatch(toggle()),setIsMobileMenuOpen(false)}}
+                  className="text-white hover:bg-blue-700 block px-3 py-6 rounded-md text-base font-medium"
+                >
+                  Initial
+                </Link>
+              </>
+            )}
             <div className="flex justify-between items-center">
               <div className="flex gap-4 ml-3 ">
-                <button onClick={() =>{ changeLanguage("en"), setIsMobileMenuOpen(false)}}>
+                <button
+                  onClick={() => {
+                    changeLanguage("en"), setIsMobileMenuOpen(false);
+                  }}
+                >
                   <img
                     src="/i18nFlags/uk.png"
                     alt="Flag icon"
                     className="w-8 h-5 transition-transform duration-100 hover:border-2"
                   />
                 </button>
-                <button onClick={() => {changeLanguage("es"),setIsMobileMenuOpen(false)}}>
+                <button
+                  onClick={() => {
+                    changeLanguage("es"), setIsMobileMenuOpen(false);
+                  }}
+                >
                   <img
                     src="/i18nFlags/spain.png"
                     alt="Spanish"
                     className="w-8 h-5 transition-transform duration-100 hover:border-2"
                   />
                 </button>
-                <button onClick={() =>{ changeLanguage("gr"), setIsMobileMenuOpen(false)}}>
+                <button
+                  onClick={() => {
+                    changeLanguage("gr"), setIsMobileMenuOpen(false);
+                  }}
+                >
                   <img
                     src="/i18nFlags/greece.png"
                     alt="Greek"
@@ -264,7 +295,9 @@ function Navbar({ isInSection, onClick, darkMode }) {
                 </button>
               </div>
               <button
-                onClick={()=>{onClick(),setIsMobileMenuOpen(false)}}
+                onClick={() => {
+                  onClick(), setIsMobileMenuOpen(false);
+                }}
                 className="text-2xl p-1 rounded-full bg-gray-200 dark:bg-gray-700 transition-transform duration-100 hover:dark:bg-gray-500  hover:bg-gray-300"
                 aria-label="Toggle dark mode"
               >

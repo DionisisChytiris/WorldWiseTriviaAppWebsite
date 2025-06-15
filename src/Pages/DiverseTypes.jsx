@@ -50,6 +50,15 @@ function DiverseTypes() {
      autoplay: false,
      prevArrow: <PrevArrow />,
      nextArrow: <NextArrow />,
+     responsive: [
+      {
+        breakpoint: 768, // below 768px screen width
+        settings: {
+          slidesToShow: 1,
+          centerMode: false, // optional, you can disable center mode on mobile
+        }
+      }
+    ],
    };
  
    return (
@@ -76,12 +85,13 @@ function DiverseTypes() {
            {images.map((src, index) => (
              <div
                key={index}
-               className="p-2 ml-5 md:ml-10 transition-transform duration-300"
+               className="p-2 ml-0 md:ml-10"
+              //  className="p-2 ml-5 md:ml-10 transition-transform duration-300 "
              >
                <img
                  src={src}
                  alt={`slide-${index}`}
-                 className="relative overflow-visible z-10 carousel-image w-[100%] sm:w-[60%] rounded-lg transition-transform duration-300"
+                 className="relative overflow-visible px-2 md:px-0 z-10 carousel-image w-[100%] sm:w-[60%] rounded-lg transition-transform duration-300"
                />
              </div>
            ))}

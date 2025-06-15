@@ -23,9 +23,17 @@ html {
   transition: transform 0.3s ease;
 }
 
+
 /* Scale up the center image */
 /* .slick-center .carousel-image {
   transform: scale(1.2);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   z-index: 1;
 } */ 
+
+.carousel-image {
+  width: 100%;          /* make it responsive */
+  max-width: 200px;     /* max width to control size */
+  margin: 0 auto;       /* center image */
+  display: block;
+}

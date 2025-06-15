@@ -23,7 +23,7 @@ function CardSection() {
         <h2 className="text-2xl lg:text-4xl  font-bold text-center dark:text-white text-gray-900 mb-14 md:mb-20 px-4">
           {t("whyChooseApp")}
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 xl:gap-6 2xl:gap-8">
           <FeatureCard
             icon={<Star className="w-8 h-8 text-blue-600 dark:text-blue-300" />}
             title={t("multipleCategories")}
