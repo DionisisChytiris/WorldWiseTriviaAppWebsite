@@ -29,7 +29,7 @@ export default function TitleSection() {
           {/* <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8 mt-10"> */}
           <a
             // href="#"
-            href="https://apps.apple.com/app/id6504780092"
+            href="https://apps.apple.com/us/app/world-wise-trivia/id6670754535"
             target="_blank"
             className="inline-flex items-center bg-gray-500 dark:bg-gray-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-800 hover:dark:bg-gray-800  transition"
           >
@@ -41,7 +41,7 @@ export default function TitleSection() {
 
           <a
             // href="#"
-            href="https://play.google.com/store/apps/details?id=com.greekgeographyquizapp.dion"
+            href="https://play.google.com/store/apps/details?id=com.worldwisetrivia.app"
             target="_blank"
             className="inline-flex items-center bg-green-600 dark:bg-green-800 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 hover:dark:bg-green-700 transition"
           >

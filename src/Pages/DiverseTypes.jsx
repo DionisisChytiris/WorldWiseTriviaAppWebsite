@@ -70,7 +70,7 @@ function DiverseTypes() {
      >
       
        <h1 className="text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-bold text-customBlue dark:text-white mb-12 lg:mb-8">
-         {t("title1")}
+         {t("title1")} Diverse Quiz Types
        </h1>
  
         <div className="px-10 text-lg sm:text-lg lg:text-2xl text-gray-500  dark:text-gray-400 font-medium max-w-3xl mx-auto py-0 md:py-20">
@@ -85,7 +85,7 @@ function DiverseTypes() {
            {images.map((src, index) => (
              <div
                key={index}
-               className="p-2 ml-0 md:ml-10"
+               className="p-2 ml-0 md:ml-0"
               //  className="p-2 ml-5 md:ml-10 transition-transform duration-300 "
              >
                <img
