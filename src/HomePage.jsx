@@ -7,6 +7,7 @@ import PreviewSection from "./components/PreviewSection";
 import MockTablet from "./components/MockTablet";
 import MultipleCategories from "./components/MultipleCategories";
 import TopImage from "./components/TopImage";
+import Contact from "./Pages/Contact";
 
 function HomePage() {
   return (
@@ -24,6 +25,7 @@ function HomePage() {
       <MockTablet />
       <CardSection />
       <PreviewSection />
+      <Contact/>
     </>
   );
 }
