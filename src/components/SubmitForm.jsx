@@ -50,6 +50,7 @@ function SubmitForm() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
+            pp_id: "trivia-website",
             client_id,
             name: name.trim(),
             email: email.trim(),
