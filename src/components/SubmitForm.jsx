@@ -34,8 +34,9 @@ function SubmitForm() {
     }
 
     // const client_id = await AsyncStorage.getItem("analytics_client_id");
-    const randomPart = Math.random().toString(36).substring(2, 8); // 6-char string
-    const client_id = `WorldTrivia Website - ${randomPart}`;
+    // const randomPart = Math.random().toString(36).substring(2, 8); // 6-char string
+    // const client_id = `WorldTrivia Website - ${randomPart}`;
+    const client_id = Math.random().toString(36).substring(2, 8)
     // if (!client_id) {
     //   alert("Client ID is required. Please try again.");
     //   return;
@@ -50,7 +51,7 @@ function SubmitForm() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            pp_id: "trivia-website",
+            app_id: "trivia-website",
             client_id,
             name: name.trim(),
             email: email.trim(),
@@ -101,7 +102,7 @@ function SubmitForm() {
   };
   const handleMessageChange = (text) => {
     // Allow letters, numbers, spaces, and emojis. Block other symbols.
-    const filtered = text.replace(/[^\p{L}\p{N}\p{Emoji}\s.,!]/gu, "");
+    const filtered = text.replace(/[^\p{L}\p{N}\p{Emoji}\s.,!:-]/gu, "");
     if (filtered !== text) {
       setWarning("Only letters, numbers, spaces, and emojis are allowed.");
     } else {
