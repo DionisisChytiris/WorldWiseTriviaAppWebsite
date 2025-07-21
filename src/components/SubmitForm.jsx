@@ -1,8 +1,10 @@
 import React, { useState, useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useTranslation } from "react-i18next";
 
 function SubmitForm() {
+  const { t } = useTranslation();
   const nameInputRef = useRef(null);
   const emailInputRef = useRef(null);
   const messageInputRef = useRef(null);
@@ -17,18 +19,18 @@ function SubmitForm() {
     // setSubmittedName(name);
 
     if (!name.trim()) {
-      alert("Please insert you name!");
+      alert(t("cntInsertName"));
       nameInputRef.current?.focus();
       return;
     }
 
     if (!email.trim() && !email.includes("@")) {
-      alert("Please insert you email!");
+      alert(t("cntInsertEmail"));
       emailInputRef.current?.focus();
       return;
     }
     if (!message.trim()) {
-      alert("Please insert you message!");
+      alert(t("cntInsertMessage"));
       messageInputRef.current?.focus();
       return;
     }
@@ -65,16 +67,16 @@ function SubmitForm() {
       if (response.ok) {
         // setRefresh((prev) => !prev);
         // alert("Το μήνυμά σας στάλθηκε με επιτυχία!");
-        toast.success("Your message has been sent!");
+        toast.success(t("cntMsSent"));
         setMessage("");
         setName("");
         setEmail("");
         setWarning("");
       } else {
-        alert.alert("Error", data.error || "Η αποστολή του μηνύματος απέτυχε.");
+        alert.alert("Error", data.error || t("cntMsFailed"));
       }
     } catch {
-      alert("Η αποστολή του μηνύματος απέτυχε.");
+      alert(t("cntMsFailed"));
     }
   };
 
@@ -82,7 +84,7 @@ function SubmitForm() {
     // Allow letters, numbers, spaces, and emojis. Block other symbols.
     const filtered = text.replace(/[^\p{L}\p{N}\p{Emoji}\s]/gu, "");
     if (filtered !== text) {
-      setWarning("Only letters, numbers, spaces, and emojis are allowed.");
+      setWarning(t("handleNameChange"));
     } else {
       setWarning(""); // Clear warning if input is valid
     }
@@ -92,9 +94,7 @@ function SubmitForm() {
     // Allow letters, numbers, spaces, emojis, and common email symbols
     const filtered = text.replace(/[^\p{L}\p{N}\p{Emoji}\s@._\-+]/gu, "");
     if (filtered !== text) {
-      setWarning(
-        "Only letters, numbers, spaces, @, _, + and emojis are allowed."
-      );
+      setWarning(t("handleEmailChange"));
     } else {
       setWarning(""); // Clear warning if input is valid
     }
@@ -104,7 +104,7 @@ function SubmitForm() {
     // Allow letters, numbers, spaces, and emojis. Block other symbols.
     const filtered = text.replace(/[^\p{L}\p{N}\p{Emoji}\s.,!:-]/gu, "");
     if (filtered !== text) {
-      setWarning("Only letters, numbers, spaces, and emojis are allowed.");
+      setWarning(t("handleMessageChange"));
     } else {
       setWarning(""); // Clear warning if input is valid
     }
@@ -125,7 +125,7 @@ function SubmitForm() {
           <input
             ref={nameInputRef}
             type="text"
-            placeholder="Your Name *"
+            placeholder={t("EnterName")}
             value={name}
             onChange={(e) => handleNameChange(e.target.value)}
             className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white dark:placeholder-gray-300  hover:border-blue-400 hover:bg-gray-50 
@@ -136,7 +136,7 @@ function SubmitForm() {
           <input
             ref={emailInputRef}
             type="email"
-            placeholder="Your Email *"
+            placeholder={t("EnterEmail")}
             value={email}
             onChange={(e) => handleEmailChange(e.target.value)}
             className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white dark:placeholder-gray-300  hover:border-blue-400 hover:bg-gray-50 
@@ -154,7 +154,7 @@ function SubmitForm() {
         <div className="form-group">
           <textarea
             ref={messageInputRef}
-            placeholder="Your Message *"
+            placeholder={t("EnterMessage")}
             value={message}
             onChange={(e) => handleMessageChange(e.target.value)}
             className="w-full h-40 px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white dark:placeholder-gray-300  hover:border-blue-400 hover:bg-gray-50 
@@ -162,7 +162,7 @@ function SubmitForm() {
           ></textarea>
         </div>
         <button type="submit" className="submit-button">
-          <span>Send Message</span>
+          <span>{t("contactSend")}</span>
         </button>
       </form>
       {/* <div className="text-white">{submittedName}</div> */}
